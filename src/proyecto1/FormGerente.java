@@ -52,6 +52,7 @@ public class FormGerente extends javax.swing.JFrame {
         jButtonBuscarPagosAp = new javax.swing.JButton();
         jLabelError = new javax.swing.JLabel();
         jButtonPagos = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,6 +122,13 @@ public class FormGerente extends javax.swing.JFrame {
             }
         });
 
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -133,9 +141,6 @@ public class FormGerente extends javax.swing.JFrame {
                 .addGap(33, 33, 33))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(25, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 865, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(119, 119, 119)
                         .addComponent(jButtonListarApoderados)
@@ -163,7 +168,12 @@ public class FormGerente extends javax.swing.JFrame {
                                         .addComponent(jButtonBuscarPagosAp))))
                             .addComponent(jButtonPagos))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2)))
+                        .addComponent(jScrollPane2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(25, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnVolver)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 865, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(83, 83, 83))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -203,7 +213,9 @@ public class FormGerente extends javax.swing.JFrame {
                                 .addComponent(jButtonPagos))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnVolver, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
 
@@ -224,9 +236,9 @@ public class FormGerente extends javax.swing.JFrame {
             DefaultTableModel modelo = new DefaultTableModel();
             this.jTable1.setModel(modelo);
             //Para conectarnos a nuestra base de datos
-            String url = "jdbc:oracle:thin:@ontourbd.ct6x72g7c3id.us-east-2.rds.amazonaws.com:1521:orcl";
+            String url = "jdbc:oracle:thin:@ontourbd.cww6n5k3t8qv.us-east-2.rds.amazonaws.com:1521:orcl";
             // Establecemos los valores de cadena de conexión, usuario y contraseña
-            cn = DriverManager.getConnection(url, "Portafolio02", "Portafolio123");
+            cn = DriverManager.getConnection(url, "Portafolio02", "portafolio123");
             //Para ejecutar la consulta
             s = cn.createStatement();
             //Ejecutamos la consulta y los datos lo almacenamos en un ResultSet
@@ -264,9 +276,9 @@ public class FormGerente extends javax.swing.JFrame {
             DefaultTableModel modelo = new DefaultTableModel();
             this.jTable1.setModel(modelo);
             //Para conectarnos a nuestra base de datos
-            String url = "jdbc:oracle:thin:@ontourbd.ct6x72g7c3id.us-east-2.rds.amazonaws.com:1521:orcl";
+            String url = "jdbc:oracle:thin:@ontourbd.cww6n5k3t8qv.us-east-2.rds.amazonaws.com:1521:orcl";
             // Establecemos los valores de cadena de conexión, usuario y contraseña
-            cn = DriverManager.getConnection(url, "Portafolio02", "Portafolio123");
+            cn = DriverManager.getConnection(url, "Portafolio02", "portafolio123");
             //Para ejecutar la consulta
             s = cn.createStatement();
             //Ejecutamos la consulta y los datos lo almacenamos en un ResultSet
@@ -301,9 +313,9 @@ public class FormGerente extends javax.swing.JFrame {
             DefaultTableModel modelo = new DefaultTableModel();
             this.jTable1.setModel(modelo);
             //Para conectarnos a nuestra base de datos
-            String url = "jdbc:oracle:thin:@ontourbd.ct6x72g7c3id.us-east-2.rds.amazonaws.com:1521:orcl";
+            String url = "jdbc:oracle:thin:@ontourbd.cww6n5k3t8qv.us-east-2.rds.amazonaws.com:1521:orcl";
             // Establecemos los valores de cadena de conexión, usuario y contraseña
-            cn = DriverManager.getConnection(url, "Portafolio02", "Portafolio123");
+            cn = DriverManager.getConnection(url, "Portafolio02", "portafolio123");
             //Para ejecutar la consulta
             s = cn.createStatement();
             //Ejecutamos la consulta y los datos lo almacenamos en un ResultSet
@@ -344,9 +356,9 @@ public class FormGerente extends javax.swing.JFrame {
             DefaultTableModel modelo = new DefaultTableModel();
             this.jTablePagosEn.setModel(modelo);
             //Para conectarnos a nuestra base de datos
-            String url = "jdbc:oracle:thin:@ontourbd.ct6x72g7c3id.us-east-2.rds.amazonaws.com:1521:orcl";
+            String url = "jdbc:oracle:thin:@ontourbd.cww6n5k3t8qv.us-east-2.rds.amazonaws.com:1521:orcl";
             // Establecemos los valores de cadena de conexión, usuario y contraseña
-            cn = DriverManager.getConnection(url, "Portafolio02", "Portafolio123");
+            cn = DriverManager.getConnection(url, "Portafolio02", "portafolio123");
             //Para ejecutar la consulta
             s = cn.createStatement();
             //Ejecutamos la consulta y los datos lo almacenamos en un ResultSet
@@ -383,9 +395,9 @@ public class FormGerente extends javax.swing.JFrame {
             DefaultTableModel modelo = new DefaultTableModel();
             this.jTablePagosEn.setModel(modelo);
             //Para conectarnos a nuestra base de datos
-            String url = "jdbc:oracle:thin:@ontourbd.ct6x72g7c3id.us-east-2.rds.amazonaws.com:1521:orcl";
+            String url = "jdbc:oracle:thin:@ontourbd.cww6n5k3t8qv.us-east-2.rds.amazonaws.com:1521:orcl";
             // Establecemos los valores de cadena de conexión, usuario y contraseña
-            cn = DriverManager.getConnection(url, "Portafolio02", "Portafolio123");
+            cn = DriverManager.getConnection(url, "Portafolio02", "portafolio123");
             //Para ejecutar la consulta
             s = cn.createStatement();
             //Ejecutamos la consulta y los datos lo almacenamos en un ResultSet
@@ -421,9 +433,9 @@ public class FormGerente extends javax.swing.JFrame {
             DefaultTableModel modelo = new DefaultTableModel();
             this.jTablePagosEn.setModel(modelo);
             //Para conectarnos a nuestra base de datos
-            String url = "jdbc:oracle:thin:@ontourbd.ct6x72g7c3id.us-east-2.rds.amazonaws.com:1521:orcl";
+            String url = "jdbc:oracle:thin:@ontourbd.cww6n5k3t8qv.us-east-2.rds.amazonaws.com:1521:orcl";
             // Establecemos los valores de cadena de conexión, usuario y contraseña
-            cn = DriverManager.getConnection(url, "Portafolio02", "Portafolio123");
+            cn = DriverManager.getConnection(url, "Portafolio02", "portafolio123");
             //Para ejecutar la consulta
             s = cn.createStatement();
             //Ejecutamos la consulta y los datos lo almacenamos en un ResultSet
@@ -463,6 +475,11 @@ public class FormGerente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jIdEncargadoKeyTyped
 
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnVolverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -499,6 +516,7 @@ public class FormGerente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVolver;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonBuscarPagosAp;
     private javax.swing.JButton jButtonBuscarPagosEn;

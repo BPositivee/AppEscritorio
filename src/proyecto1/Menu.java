@@ -119,7 +119,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void administradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_administradorActionPerformed
         // TODO add your handling code here:
-        FormAdmin adm = new FormAdmin();
+        MenuAdmin adm = new MenuAdmin();
         adm.setVisible(true);
     }//GEN-LAST:event_administradorActionPerformed
 
