@@ -639,13 +639,13 @@ public class MantenedorTour extends javax.swing.JFrame {
     private void jButtonTourEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTourEditarActionPerformed
         // TODO add your handling code here:
 
-        int nId = Integer.parseInt(this.jTextFieldTourIDEditar.getText());
+        int nuevoId = Integer.parseInt(this.jTextFieldTourIDEditar.getText());
 
-        String nNombreTour= this.jTextFieldTourNuevoNombre.getText();
-        int nPrecioBase = Integer.parseInt(this.jTextFieldTourNuevoPrecioBase.getText());
-        int nDias = Integer.parseInt(this.jTextFieldTourNuevoDias.getText());
-        int nPrecioTotal = Integer.parseInt(this.jTextFieldTourNuevoPrecioTotal.getText());
-        int nDestinoId = this.jComboBoxNuevoDestino.getSelectedIndex();
+        String nuevoNombreTour= this.jTextFieldTourNuevoNombre.getText();
+        int nuevoPrecioBase = Integer.parseInt(this.jTextFieldTourNuevoPrecioBase.getText());
+        int nuevoDias = Integer.parseInt(this.jTextFieldTourNuevoDias.getText());
+        int nuevoPrecioTotal = Integer.parseInt(this.jTextFieldTourNuevoPrecioTotal.getText());
+        int nuevoDestinoId = this.jComboBoxNuevoDestino.getSelectedIndex();
 
         try{
 
@@ -655,11 +655,11 @@ public class MantenedorTour extends javax.swing.JFrame {
             cn = DriverManager.getConnection(url, "Portafolio02", "portafolio123");
             //Para ejecutar la consulta
             s = cn.createStatement();
-            if(nDestinoId<=0){
+            if(nuevoDestinoId<=0){
                 JOptionPane.showMessageDialog(rootPane, "Debe Seleccionar un Destino");
             }else{
                 //Ejecutamos la consulta y los datos lo almacenamos en un ResultSet
-                rs = s.executeQuery("UPDATE TOUR SET NOMBRE_TOURS ='"+nNombreTour+"',PRECIO_BASE = "+nPrecioBase+",DIAS = "+nDias+",PRECIO_TOTAL = "+nPrecioTotal+",DESTINO_DESTINO_ID = "+nDestinoId+" WHERE TOUR_ID = "+nId+" ");
+                rs = s.executeQuery("UPDATE TOUR SET NOMBRE_TOURS ='"+nuevoNombreTour+"',PRECIO_BASE = "+nuevoPrecioBase+",DIAS = "+nuevoDias+",PRECIO_TOTAL = "+nuevoPrecioTotal+",DESTINO_DESTINO_ID = "+nuevoDestinoId+" WHERE TOUR_ID = "+nuevoId+" ");
                 JOptionPane.showMessageDialog(rootPane, "EDITADO CON EXITO");
                 limpiarCampos();
             }
@@ -715,6 +715,17 @@ public class MantenedorTour extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnSalirActionPerformed
 
     public void limpiarCampos(){
+            this.jTextFieldTourNombre.setText("");
+            this.jTextFieldTourPrecioBase.setText("");
+            this.jTextFieldTourDias.setText("");
+            this.jTextFieldTourPrecioTotal.setText("");
+            
+            this.jTextFieldTourNuevoNombre.setText("");
+            this.jTextFieldTourNuevoPrecioBase.setText("");
+            this.jTextFieldTourNuevoDias.setText("");
+            this.jTextFieldTourNuevoPrecioTotal.setText("");
+            
+            this.jTextFieldTourIDEliminar.setText("");
     
     }
     

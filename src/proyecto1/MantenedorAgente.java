@@ -473,8 +473,8 @@ public class MantenedorAgente extends javax.swing.JFrame {
             int minId = 0;
             int id =0;
             String nombre= this.jTextNombre.getText();
-            String ap_p = this.jTextFieldApellidoP.getText();
-            String ap_m = this.jTextFieldApellidoM.getText();
+            String apellido_paterno = this.jTextFieldApellidoP.getText();
+            String apellido_materno = this.jTextFieldApellidoM.getText();
             String username = this.jTextFieldUsername.getText();
             String email = this.jTextFieldEmail.getText();
             String password = this.jTextFieldPassword.getText();
@@ -495,7 +495,7 @@ public class MantenedorAgente extends javax.swing.JFrame {
 
             id= minId+1;
             //Ejecutamos la consulta y los datos lo almacenamos en un ResultSet
-            rs = s.executeQuery("INSERT INTO AGENTE VALUES("+id+",'"+nombre+"','"+ap_p+"','"+ap_m+"','"+username+"','"+email+"','"+password+"','"+rol+"')");
+            rs = s.executeQuery("INSERT INTO AGENTE VALUES("+id+",'"+nombre+"','"+apellido_paterno+"','"+apellido_materno+"','"+username+"','"+email+"','"+password+"','"+rol+"')");
             JOptionPane.showMessageDialog(rootPane, "INGRESADO CON EXITO");
             limpiarCampos();
         } catch (Exception ex) {
@@ -549,13 +549,13 @@ public class MantenedorAgente extends javax.swing.JFrame {
 
     private void jButtonEditarAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarAgenteActionPerformed
         // TODO add your handling code here:
-        int nId = Integer.parseInt(this.jTextNuevoIdAgente.getText());
-        String nNombre= this.jTextNuevoNombre.getText();
-        String nAp_p = this.jTextFieldNuevoApellidoP.getText();
-        String nAp_m = this.jTextFieldNuevoApellidoM.getText();
-        String nUsername = this.jTextFieldNuevoUsername.getText();
-        String nEmail = this.jTextFieldNuevoEmail.getText();
-        String nPassword = this.jTextFieldNuevoPassword.getText();
+        int nuevoId = Integer.parseInt(this.jTextNuevoIdAgente.getText());
+        String nuevoNombre= this.jTextNuevoNombre.getText();
+        String nuevoAp_p = this.jTextFieldNuevoApellidoP.getText();
+        String nuevoAp_m = this.jTextFieldNuevoApellidoM.getText();
+        String nuevoUsername = this.jTextFieldNuevoUsername.getText();
+        String nuevoEmail = this.jTextFieldNuevoEmail.getText();
+        String nuevoPassword = this.jTextFieldNuevoPassword.getText();
 
         try{
 
@@ -570,7 +570,7 @@ public class MantenedorAgente extends javax.swing.JFrame {
 
             //id= minId+1;
             //Ejecutamos la consulta y los datos lo almacenamos en un ResultSet
-            rs = s.executeQuery("UPDATE AGENTE SET NOMBRE ='"+nNombre+"',AP_PATERNO = '"+nAp_p+"',AP_MATERNO = '"+nAp_m+"',USERNAME = '"+nUsername+"',EMAIL = '"+nEmail+"',PASSWORD = '"+nPassword+"' WHERE AGENTE_ID = "+nId+" ");
+            rs = s.executeQuery("UPDATE AGENTE SET NOMBRE ='"+nuevoNombre+"',AP_PATERNO = '"+nuevoAp_p+"',AP_MATERNO = '"+nuevoAp_m+"',USERNAME = '"+nuevoUsername+"',EMAIL = '"+nuevoEmail+"',PASSWORD = '"+nuevoPassword+"' WHERE AGENTE_ID = "+nuevoId+" ");
             JOptionPane.showMessageDialog(rootPane, "EDITADO CON EXITO");
             limpiarCampos();
         } catch (Exception ex) {
@@ -626,7 +626,24 @@ public class MantenedorAgente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     public void limpiarCampos(){
-    
+        
+            this.jTextNombre.setText("");
+            this.jTextFieldApellidoP.setText("");
+            this.jTextFieldApellidoM.setText("");
+            this.jTextFieldUsername.setText("");
+            this.jTextFieldEmail.setText("");
+            this.jTextFieldPassword.setText("");
+            
+            this.jTextNuevoIdAgente.setText("");
+            this.jTextNuevoNombre.setText("");
+            this.jTextFieldNuevoApellidoP.setText("");
+            this.jTextFieldNuevoApellidoM.setText("");
+            this.jTextFieldNuevoUsername.setText("");
+            this.jTextFieldNuevoEmail.setText("");
+            this.jTextFieldNuevoPassword.setText("");
+            this.jTextFieldAgenteIDEliminar.setText("");
+            
+            
     }
     
     /**

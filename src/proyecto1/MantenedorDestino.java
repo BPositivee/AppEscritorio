@@ -531,9 +531,9 @@ public class MantenedorDestino extends javax.swing.JFrame {
     private void jButtonEditarDestinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarDestinoActionPerformed
         // TODO add your handling code here:
 
-        String nCiudad = this.jTextFieldNuevaCiudad.getText();
-        String nPais = this.jTextFieldNuevoPais.getText();
-        int dId= Integer.parseInt(jTextFieldNuevoDestinoId.getText());
+        String nuevoCiudad = this.jTextFieldNuevaCiudad.getText();
+        String nuevoPais = this.jTextFieldNuevoPais.getText();
+        int destinoId= Integer.parseInt(jTextFieldNuevoDestinoId.getText());
 
         try{
 
@@ -548,7 +548,7 @@ public class MantenedorDestino extends javax.swing.JFrame {
 
             //id= minId+1;
             //Ejecutamos la consulta y los datos lo almacenamos en un ResultSet
-            rs = s.executeQuery("UPDATE DESTINO SET CIUDAD ='"+nCiudad+"',PAIS = '"+nPais+"' WHERE DESTINO_ID = "+dId+" ");
+            rs = s.executeQuery("UPDATE DESTINO SET CIUDAD ='"+nuevoCiudad+"',PAIS = '"+nuevoPais+"' WHERE DESTINO_ID = "+destinoId+" ");
             JOptionPane.showMessageDialog(rootPane, "EDITADO CON EXITO");
             limpiarCampos();
 
@@ -606,7 +606,15 @@ public class MantenedorDestino extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnSalirActionPerformed
 
     public void limpiarCampos(){
-    
+        
+        this.jTextCiudad.setText("");
+        this.jTextPais.setText("");
+        this.jTextFieldDestinoIdEliminar.setText("");
+        
+        this.jTextFieldNuevaCiudad.setText("");
+        this.jTextFieldNuevoPais.setText("");
+        this.jTextFieldNuevoDestinoId.setText("");
+        
     }
     /**
      * @param args the command line arguments
